@@ -1,4 +1,4 @@
-//ÈİÆ÷vectorµÄ¼òµ¥Ê¹ÓÃ;
+//å®¹å™¨vectorçš„ç®€å•ä½¿ç”¨;
 /*#include<iostream>
 #include<vector>
 #include<algorithm>
@@ -22,7 +22,7 @@ int main()
 	for_each(a.begin(),a.end(), com);
 	return 0;
 }*/
-//vectorµÄÇ¶Ì×;
+//vectorçš„åµŒå¥—;
 /*#include<iostream>
 #include<vector>
 #include<algorithm>
@@ -60,7 +60,7 @@ int main()
 		}
 		return 0;
 }*/
-//stringµÄ¸³Öµ;
+//stringçš„èµ‹å€¼;
 /*#include<iostream>
 #include<string>
 using namespace std;
@@ -72,7 +72,7 @@ int main()
 	cout << str;
 	return 0;
 }*/
-//stringµÄ²éÕÒÒÔ¼°¶Ô±È;
+//stringçš„æŸ¥æ‰¾ä»¥åŠå¯¹æ¯”;
 /*#include<iostream>
 #include<string>
 using namespace std;
@@ -88,7 +88,7 @@ int main()
 	cout << b.compare(a);
 	return 0;
 }*/
-//stringÖĞÍ¨¹ıat·ÃÎÊµ¥¸ö×Ö·û;
+//stringä¸­é€šè¿‡atè®¿é—®å•ä¸ªå­—ç¬¦;
 /*#include<iostream>
 #include<string>
 using namespace std;
@@ -99,7 +99,7 @@ int main()
 		cout << a.at(i);
 		return 0;
 }*/
-//×Ö·û´®µÄ²åÈë(insert)ºÍÉ¾³ı(erase);
+//å­—ç¬¦ä¸²çš„æ’å…¥(insert)å’Œåˆ é™¤(erase);
 /*#include<iostream>
 #include<string>
 using namespace std;
@@ -112,7 +112,7 @@ int main()
 	cout << a;
 	return 0;
 }*/
-//stringµÄ½ØÈ¡;
+//stringçš„æˆªå–;
 /*#include<iostream>
 #include<string>
 using namespace std;
@@ -123,7 +123,7 @@ int main()
 	cout << a1;
 	return 0;
 }*/
-//¹ØÓÚÎÒÑ§µÄvector;
+//å…³äºæˆ‘å­¦çš„vector;
 /*#include<iostream>
 #include<vector>
 #include<algorithm>
@@ -156,7 +156,7 @@ int main()
 	print(v);
 	return 0;
 }*/
-//vectorµÄµ¥¸ö³ÉÔ±¶ÁÈ¡;
+//vectorçš„å•ä¸ªæˆå‘˜è¯»å–;
 /*#include<iostream>
 #include<vector>
 #include<algorithm>
@@ -179,7 +179,7 @@ int main()
 	print(v);
 	return 0;
 }*/
-//ÇÉÓÃswapÊÕËõvectorÈİÆ÷´óĞ¡;
+//å·§ç”¨swapæ”¶ç¼©vectorå®¹å™¨å¤§å°;
 /*#include<iostream>
 #include<vector>
 using namespace std;
@@ -188,12 +188,12 @@ int main()
 	vector<int> v;
 	for (int i = 0; i < 10000; i++)
 		v.push_back(i);
-	cout << "µ±Ç°ÈİÆ÷´óĞ¡:" << v.capacity() << endl;
+	cout << "å½“å‰å®¹å™¨å¤§å°:" << v.capacity() << endl;
 	v.resize(100);
 	vector<int>(v).swap(v);
-	cout << "µ±Ç°ÈİÆ÷´óĞ¡:" << v.capacity() << endl;
+	cout << "å½“å‰å®¹å™¨å¤§å°:" << v.capacity() << endl;
 }*/
-//ÀûÓÃreserveÎªvactorÈİÆ÷Ô¤Áô¿Õ¼ä;
+//åˆ©ç”¨reserveä¸ºvactorå®¹å™¨é¢„ç•™ç©ºé—´;
 /*#include<iostream>
 #include<vector>
 using namespace std;
@@ -219,7 +219,7 @@ int main()
 	}
 	cout << num << ' ' << num1;
 }*/
-//sortÅÅĞò;
+//sortæ’åº;
 /*#include<iostream>
 #include<algorithm>
 #include<vector>
@@ -246,7 +246,7 @@ int main()
 	sort(v.begin(), v.end());
 	print(v);
 }*/
-//stack(Õ»)ÈİÆ÷;
+//stack(æ ˆ)å®¹å™¨;
 /*#include<iostream>
 #include<stack>
 using namespace std;
@@ -284,7 +284,7 @@ int main()
 	a.assign(9, 10);
 	print(a);
 }*/
-//sortº¯Êı¸øÊı×éÅÅĞò;
+//sortå‡½æ•°ç»™æ•°ç»„æ’åº;
 /*#include<iostream>
 #include<algorithm>
 using namespace std;
@@ -298,11 +298,11 @@ int main()
 	for (int i = 0; i < 10; i++)
 		cin >> a[i];
 	cout << *(a + 9) << endl;
-	sort(a, a+10,com);//ÓĞµÚÈı¸ö²ÎÊıless<int>()(´ÓĞ¡µ½´óÅÅĞò),greater<int>()(´Ó´óµ½Ğ¡ÅÅĞò)
+	sort(a, a+10,com);//æœ‰ç¬¬ä¸‰ä¸ªå‚æ•°less<int>()(ä»å°åˆ°å¤§æ’åº),greater<int>()(ä»å¤§åˆ°å°æ’åº)
 	for (int i = 0; i < 10; i++)
 		cout << a[i] << ' ';
 }*/
-//listÓÃ·¨;
+//listç”¨æ³•;
 /*#include<iostream>
 #include<algorithm>
 #include<list>
@@ -318,7 +318,7 @@ public:
 };
 void com(person& a)
 {
-	cout << "Ãû×Ö:" << a.name << "ÄêÁä:" << a.age << "Éí¸ß:" << a.hight << endl;
+	cout << "åå­—:" << a.name << "å¹´é¾„:" << a.age << "èº«é«˜:" << a.hight << endl;
 }
 void print(list<person>& a)
 {
@@ -345,7 +345,7 @@ int main()
 	cout << "**********************************" << endl;
 	print(a);
 }*/
-//¹ØÓÚÎÒÑ§µÄÄÇĞ©Ëã·¨;
+//å…³äºæˆ‘å­¦çš„é‚£äº›ç®—æ³•;
 /*#include<iostream>
 #include<vector>
 #include<algorithm>
@@ -391,13 +391,13 @@ int main()
 		v.push_back(i);
 	vector<int> v1;
 	v1.resize(10);
-	transform(v.begin(), v.end(), v1.begin(), b());//transform,b·Âº¯Êı
+	transform(v.begin(), v.end(), v1.begin(), b());//transform,bä»¿å‡½æ•°
 	for_each(v.begin(), v.end(), coml);
 	cout << endl; 
 	for_each(v1.begin(), v1.end(), coml);
-	vector<int>::iterator it=find(v.begin(), v.end(), 2000);//findÆÕÍ¨
+	vector<int>::iterator it=find(v.begin(), v.end(), 2000);//findæ™®é€š
 	if (it == v.end())
-		cout <<endl<< "Ã»ÓĞÕÒµ½!" << endl;
+		cout <<endl<< "æ²¡æœ‰æ‰¾åˆ°!" << endl;
 	else
 	cout << endl << *it << endl;
 	vector<c> v2;
@@ -409,19 +409,19 @@ int main()
 	v2.push_back(a2);
 	v2.push_back(a3);
 	v2.push_back(a4);
-	vector<c>::iterator it1 = find(v2.begin(), v2.end(), a2);//find×Ô¶¨Òå
+	vector<c>::iterator it1 = find(v2.begin(), v2.end(), a2);//findè‡ªå®šä¹‰
 	if (it1 == v2.end())
-		cout << "Ã»ÕÒµ½" << endl;
+		cout << "æ²¡æ‰¾åˆ°" << endl;
 	else
 		cout << it1->xve << " "<<it1->name << endl;
 	it=find_if(v.begin(), v.end(), myfind);
 	if (it == v.end())
-		cout << "Ã»ÓĞÕÒµ½!" << endl;
+		cout << "æ²¡æœ‰æ‰¾åˆ°!" << endl;
 	else
 		cout << *it << endl;
 }*/
 //adjacent_find
-#include<vector>
+/*#include<vector>
 #include<iostream>
 #include<algorithm>
 using namespace std;
@@ -440,4 +440,29 @@ int main()
 	cout << *it << ' ' << *(it + 2)<<endl;
     it = adjacent_find(it+1, v.end());
 	cout << *it << ' ' << *(it + 2);
+}*/
+//å…³äºæˆ‘åˆå­¦dpå­¦ä¸æ‡‚çš„é‚£äº›äº‹
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int n,i,c,w[100]={0},p[100]={0},f[100][100]={0};
+int k(int i,int z)
+{
+   if(i==n)
+   return w[i]>z?0:p[i];
+   if(z<w[i])
+   return k(i+1,z);
+   return max(k(i+1,z),k(i+1,z-w[i])+p[i]);
+}
+int main()
+{
+    cin>>n>>c;
+    for(i=1;i<=n;i++)
+    {
+       cin>>w[i];
+    }
+    for(i=1;i<=n;i++)
+    cin>>p[i];
+    c=k(1,c);
+    cout<<c;
 }
