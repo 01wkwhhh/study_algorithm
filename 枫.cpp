@@ -442,7 +442,7 @@ int main()
 	cout << *it << ' ' << *(it + 2);
 }*/
 //关于我初学dp学不懂的那些事
-#include<iostream>
+/* #include<iostream>
 #include<algorithm>
 using namespace std;
 int n,i,c,w[100]={0},p[100]={0},f[100][100]={0};
@@ -465,4 +465,42 @@ int main()
     cin>>p[i];
     c=k(1,c);
     cout<<c;
+} */
+//关于我学到的双指针
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int a[100010],n,h,l,t,w,i,j;
+bool com(int a,int b)
+{
+    return a>b;
+}
+int main()
+{
+    cin>>n>>l;
+    for(i=1;i<=n;i++)
+    cin>>a[i];
+    sort(a+1,a+n+1,com);
+    h=n;
+    t=n;
+    for(i=0;i<=n;i++)
+    {
+        if(a[i+1]<h)
+        {
+            w=i;
+            break;
+        }
+    }
+    for(;t>0;)
+    {
+     if(a[t]>=h-1&&t-w<=l)
+     break;
+     t--;
+     h=t;
+     while(a[w+1]>=h&&h>0)
+     {
+         w++;
+     }
+    }
+    cout<<h;
 }
