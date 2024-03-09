@@ -1767,8 +1767,8 @@ int main()
 	fanzhuan(head);
 	print();
 }*/
-复习qsort排序;
-#include<stdio.h>
+//复习qsort排序;
+/* #include<stdio.h>
 #include<stdlib.h>
 int com(const void* a, const void* b)
 {
@@ -1793,4 +1793,157 @@ int main()
 	print(a);
 	qsort(a[1], 5, sizeof(int), com);
 	print(a);
+} */
+//关于我学不懂归并排序的那些事;
+/*#include<stdio.h>
+int a[100],b[100],sum=0;
+void msort(int w, int t)
+{
+	int c, d, e;
+	if ((w + t) / 2 != w)
+	{
+		msort(w, (w + t)/2);
+		msort(((w + t)/2) + 1, t);
+	}
+	for (c = w, d = ((w + t) / 2) + 1,e=w; (c <= (w + t) / 2 && d <= t)||(e<=t);e++)
+	{
+		if (c > (w + t) / 2)
+		{
+			b[e] = a[d];
+			d++;
+		}
+		else if (d > t)
+		{
+			b[e] = a[c];
+			c++;
+		}
+		else
+		{
+			if (a[c] < a[d])
+			{
+				b[e] = a[c];
+				c++;
+			}
+			else
+			{
+				b[e] = a[d];
+				d++;
+			}
+		}
+		sum++;
+	}
+	for (c = w; c <= t; c++)
+	{
+		a[c] = b[c];
+	}
+}
+int main()
+{
+	int n, i;
+	scanf_s("%d", &n);
+	for (i = 0; i < n; i++)
+		scanf_s("%d", &a[i]);
+	msort(0, n - 1);
+	for (i = 0; i < n; i++)
+		printf("%d ", b[i]);
+	printf("\n%d", sum);
+}*/
+//这么久了还记得冒泡吗？;
+/*#include<stdio.h>
+int a[20], i, temp, j, sum = 0, n;
+int main()
+{
+	scanf_s("%d", &n);
+	for (i = 0; i < n; i++)
+		scanf_s("%d", &a[i]);
+	for(i=0;i<n;i++)
+		for (j = 0; j < n-i-1; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+			}
+			sum++;
+		}
+	for (i = 0; i < n; i++)
+		printf("%d ", a[i]);
+	printf("\n%d", sum);
+}*/
+写在最后冒泡vs归并;
+#include<stdio.h>
+int a[200], b[200], a1[200], sum0 = 0; sum = 0, sum1 = 0;
+void msort(int w, int t)
+{
+	int c, d, e;
+	if ((w + t) / 2 != w)
+	{
+		msort(w, (w + t) / 2);
+		msort(((w + t) / 2) + 1, t);
+	}
+	for (c = w, d = ((w + t) / 2) + 1, e = w; (c <= (w + t) / 2 && d <= t) || (e <= t); e++)
+	{
+		if (c > (w + t) / 2)
+		{
+			b[e] = a[d];
+			d++;
+		}
+		else if (d > t)
+		{
+			b[e] = a[c];
+			c++;
+		}
+		else
+		{
+			if (a[c] < a[d])
+			{
+				b[e] = a[c];
+				c++;
+			}
+			else
+			{
+				b[e] = a[d];
+				d++;
+			}
+		}
+		sum0++;
+		sum++;
+	}
+	for (c = w; c <= t; c++)
+	{
+		sum0++;
+		a[c] = b[c];
+	}
+}
+int main()
+{
+	int n, i,temp,j;
+	scanf_s("%d", &n);
+	for (i = 0; i < n; i++)
+	{
+		scanf_s("%d", &a[i]);
+		a1[i] = a[i];
+	}
+	printf("归并排序:\n");
+	msort(0, n - 1);
+	for (i = 0; i < n; i++)
+		printf("%d ", a[i]);
+	printf("\n归并排序加上复制数组循环次数为:%d\n", sum0);
+	printf("归并排序循环次数为:%d\n", sum);
+	printf("冒泡排序:");
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n - i - 1; j++)
+		{
+			if (a1[j] > a1[j + 1])
+			{
+				temp = a1[j];
+				a1[j] = a1[j + 1];
+				a1[j + 1] = temp;
+			}
+			sum1++;
+		}
+	for (i = 0; i < n; i++)
+		printf("%d ", a1[i]);
+	printf("\n冒泡排序循环次数为:%d", sum1);
 }
