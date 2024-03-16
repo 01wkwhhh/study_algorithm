@@ -467,7 +467,7 @@ int main()
     cout<<c;
 } */
 //关于我学到的双指针
-#include<iostream>
+/*#include<iostream>
 #include<algorithm>
 using namespace std;
 int a[100010],n,h,l,t,w,i,j;
@@ -503,4 +503,83 @@ int main()
      }
     }
     cout<<h;
+}*/
+//值得我纪念的代码(哈哈应该是这样)
+#include<iostream>
+#include<cstring>
+#include<algorithm>
+#include<vector>
+using namespace std;
+string a,b;
+vector<string> zidian;
+int c[10010][2];
+int n,sum=0;
+int main()
+{
+    cin>>a;
+    n=a.size();
+    n=n-1;
+    c[n][0]=0;
+    c[n][1]=0;
+    for(int i=n-1;i>4;i--)
+    {
+        if(i+1<=n)
+        {
+            if(i+1==n)
+            {
+                b={a[i],a[i+1]};
+                zidian.push_back(b);
+                c[i][0]=1;
+            }
+            else
+            {
+                if(c[i+2][0]==0&&c[i+2][1]==0);
+                else if(a[i]==a[i+2]&&a[i+1]==a[i+3]&&c[i+2][1]==0);
+                else
+                {
+                    b={a[i],a[i+1]};
+                    zidian.push_back(b);
+                    c[i][0]=1;
+                }
+            }
+        }
+        if(i+2<=n)
+        {
+            if(i+2==n)
+            {
+                b={a[i],a[i+1],a[i+2]};
+                zidian.push_back(b);
+                c[i][1]=1;
+            }
+            else
+            {
+                if(c[i+3][0]==0&&c[i+3][1]==0);
+                else if(a[i]==a[i+3]&&a[i+1]==a[i+3]&&a[i+2]==a[i+4]&&c[i+3][0]==0);
+                else
+                {
+                    b={a[i],a[i+1],a[i+2]};
+                    zidian.push_back(b);
+                    c[i][1]=1;
+                }
+            }
+        }
+    }
+    sort(zidian.begin(),zidian.end());
+    if(zidian.size()!=0)
+    sum++;
+    for(int i=1;i<zidian.size();i++)
+    {
+        if(zidian[i]!=zidian[i-1])
+        sum++;
+    }
+    cout<<sum<<endl;
+    if(zidian.size()!=0)
+    {
+    cout<<zidian[0]<<endl;
+    for(int i=1;i<zidian.size();i++)
+    {
+        if(zidian[i]!=zidian[i-1])
+        cout<<zidian[i]<<endl;
+    }
+    }
 }
