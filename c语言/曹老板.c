@@ -1871,8 +1871,8 @@ int main()
 		printf("%d ", a[i]);
 	printf("\n%d", sum);
 }*/
-写在最后冒泡vs归并;
-#include<stdio.h>
+//写在最后冒泡vs归并;
+/* #include<stdio.h>
 int a[200], b[200], a1[200], sum0 = 0; sum = 0, sum1 = 0;
 void msort(int w, int t)
 {
@@ -1946,4 +1946,20 @@ int main()
 	for (i = 0; i < n; i++)
 		printf("%d ", a1[i]);
 	printf("\n冒泡排序循环次数为:%d", sum1);
+} */
+好久不见,测试加加减减功能;
+#include<stdio.h>
+int main()
+{
+	int i = 5;
+	int a[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	printf("i=%d\n", i);//5
+	printf("a[i--]=%d\n", a[i--]);//6
+	printf("i=%d\n", i);//4
+	printf("a[--i]=%d\n", a[--i]);//4
+	printf("i=%d\n", i);//3
+	printf("a[i++]=%d\n", a[i++]);//4
+	printf("i=%d\n", i);//4
+	printf("a[++i]=%d\n", a[++i]);//6
+	printf("i=%d", i);//5
 }
