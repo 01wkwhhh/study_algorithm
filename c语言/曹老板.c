@@ -1947,8 +1947,8 @@ int main()
 		printf("%d ", a1[i]);
 	printf("\n冒泡排序循环次数为:%d", sum1);
 } */
-好久不见,测试加加减减功能;
-#include<stdio.h>
+//好久不见,测试加加减减功能;
+/* #include<stdio.h>
 int main()
 {
 	int i = 5;
@@ -1962,4 +1962,38 @@ int main()
 	printf("i=%d\n", i);//4
 	printf("a[++i]=%d\n", a[++i]);//6
 	printf("i=%d", i);//5
+} */
+是dfs哦;
+#include<stdio.h>
+int n,sum=0;
+char a[30][30],f;
+int x[4] = { 1,0,-1,0 }, y[4] = { 0,1,0,-1 };
+void dfs(int i, int j)
+{
+	a[i][j] = '.';
+	for (int k = 0; k < 4; k++)
+		if (i+x[k]>=0&&i+x[k]<n&&j+y[k]>0&&j+y[k]<n&& a[i + x[k]][j + y[k]] == 'x')
+			dfs(i + x[k], j + y[k]);
+	for (int t = 0; t < n; t++)
+	{
+		for (int w = 0; w < n; w++)
+			printf("%c",a[t][w]);
+		printf("\n");
+	}
+	printf("%d\n",++sum);
+}
+int main()
+{
+	scanf_s("%d", &n);
+	for (int i = 0; i < n; i++)
+	{
+		scanf_s("%c", &f,1);
+		for (int j = 0; j < n; j++)
+			scanf_s("%c", &a[i][j], 1);
+	}
+	printf("%d\n",++sum);
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
+			if (a[i][j] == 'x')
+				dfs(i, j);
 }
