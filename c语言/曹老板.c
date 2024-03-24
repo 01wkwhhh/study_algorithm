@@ -1972,7 +1972,7 @@ void dfs(int i, int j)
 {
 	a[i][j] = '.';
 	for (int k = 0; k < 4; k++)
-		if (i+x[k]>=0&&i+x[k]<n&&j+y[k]>0&&j+y[k]<n&& a[i + x[k]][j + y[k]] == 'x')
+		if (i+x[k]>=0&&i+x[k]<n&&j+y[k]>=0&&j+y[k]<n&& a[i + x[k]][j + y[k]] == 'x')
 			dfs(i + x[k], j + y[k]);
 	for (int t = 0; t < n; t++)
 	{
