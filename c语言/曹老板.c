@@ -1963,7 +1963,7 @@ int main()
 	printf("a[++i]=%d\n", a[++i]);//6
 	printf("i=%d", i);//5
 } */
-是dfs哦;
+//是dfs哦;
 #include<stdio.h>
 int n,sum=0;
 char a[30][30],f;
