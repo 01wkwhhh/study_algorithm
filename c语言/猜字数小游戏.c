@@ -61,4 +61,5 @@ int main()
 			printf("你不信推荐功能,你打开它干嘛?@_@\n");
 		printf("下次走运!!!\n正确答案为:%d", a);
 	}
+	return 0;
 }
