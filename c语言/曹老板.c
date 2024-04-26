@@ -1964,7 +1964,7 @@ int main()
 	printf("i=%d", i);//5
 } */
 //是dfs哦;
-#include<stdio.h>
+/*#include<stdio.h>
 int n,sum=0;
 char a[30][30],f;
 int x[4] = { 1,0,-1,0 }, y[4] = { 0,1,0,-1 };
@@ -1996,4 +1996,122 @@ int main()
 		for (int j = 0; j < n; j++)
 			if (a[i][j] == 'x')
 				dfs(i, j);
+}*/
+//还是把快排学啦!
+/*#include<stdio.h>
+void swap(int* a,int* b)
+{
+	int temp=*a;
+	*a = *b;
+	*b = temp;
+	return;
+}
+void q_sort(int* a,int l,int j)
+{
+	if (l >= j)
+		return;
+	int b = a[l], w = l - 1, t = j + 1;
+	while (t > w)
+	{
+		do w++; while (a[w] < b);
+		do t--; while (a[t] > b);
+		if (w<t)
+			swap(a + w, a + t);
+	}
+	q_sort(a,l,t);
+	q_sort(a,t+1,j);
+	return;
+}
+void for_each(int* a, int* b)
+{
+	while (a != b)
+	{
+		printf("%d ", *a++);
+	}
+	printf("\n");
+	return;
+}
+int main()
+{
+	int n,a[1000];
+	scanf_s("%d", &n);
+	for (int i = 0; i < n; i++)
+		scanf_s("%d", &a[i]);
+	for_each(a,a+n);
+	q_sort(a,0,n-1);
+	for_each(a, a + n);
+	return 0;
+}*/
+//写在最后:快排vs归并
+#include<stdio.h>
+int sum=0,sum1=0,b[1000];
+void swap(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+	return;
+}
+void msort(int* a,int l,int j)
+{
+	if (l < (l + j) / 2)
+		msort(a, l, (l + j) / 2), msort(a, (l + j) / 2 + 1, j);
+	for (int h=l,w=l,t=(l+j)/2+1;w<=(l+j)/2||t<=j;h++)
+	{
+		if (w > (l + j) / 2)
+			b[h] = a[t++];
+		else if (t > j)
+			b[h] = a[w++];
+		else
+		{
+			if (a[t] > a[w])
+				b[h] = a[w++];
+			else
+				b[h] = a[t++];
+		}
+		sum1++;
+	}
+	for (int i = l; i <= j; i++)
+		a[i] = b[i];
+}
+void q_sort(int* a, int l, int j)
+{
+	if (l >= j)
+		return;
+	int b = a[(l+j)/2], w = l - 1, t = j + 1;
+	while (t > w)
+	{
+		do w++,sum++; while (a[w] < b);
+		do t--,sum++; while (a[t] > b);
+		if (w < t)
+			swap(a + w, a + t);
+		sum++;
+	}
+	q_sort(a, l, t);
+	q_sort(a, t + 1, j);
+	return;
+}
+void for_each(int* a,int* b)
+{
+	while (a != b)
+	{
+		printf("%d ", *a++);
+	}
+	printf("\n");
+	return;
+}
+int main()
+{
+	int n, a[1000],c[1000];
+	scanf_s("%d", &n);
+	for (int i = 0; i < n; i++)
+		scanf_s("%d", &a[i]),c[i]=a[i];
+	for_each(a, a + n);
+	msort(a, 0, n - 1);
+	for_each(a, a + n);
+	for_each(c, c + n);
+	q_sort(c, 0, n - 1);
+	for_each(c, c + n);
+	printf("sum=%d,sum1=%d", sum, sum1);
+	return 0;
 }
