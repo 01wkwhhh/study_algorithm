@@ -2043,7 +2043,7 @@ int main()
 	return 0;
 }*/
 //写在最后:快排vs归并
-#include<stdio.h>
+/*#include<stdio.h>
 int sum=0,sum1=0,b[1000];
 void swap(int* a, int* b)
 {
@@ -2113,5 +2113,47 @@ int main()
 	q_sort(c, 0, n - 1);
 	for_each(c, c + n);
 	printf("sum=%d,sum1=%d", sum, sum1);
+	return 0;
+}*/
+//复习快排
+#include<stdio.h>
+void swap(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+	return;
+}
+void q_sort(int *a,int l,int j)
+{
+	if (l >= j)
+		return;
+	int b = a[l], w = l - 1, t = j + 1;
+	while (w < t)
+	{
+		do w++; while (a[w] < b);
+		do t--; while (a[t] > b);
+		if (w < t)
+			swap(a+w,a+t);
+	}
+	q_sort(a, l, t);
+	q_sort(a, t + 1, j);
+}
+void for_each(int* a, int* b)
+{
+	while (a != b)
+		printf("%d ", *a++);
+	printf("\n");
+	return;
+}
+int main()
+{
+	int n, a[1000];
+	scanf_s("%d", &n);
+	for (int i = 0; i < n; i++)
+		scanf_s("%d", &a[i]);
+	for_each(a, a + n);
+	q_sort(a, 0, n - 1);
+	for_each(a, a + n);
 	return 0;
 }
