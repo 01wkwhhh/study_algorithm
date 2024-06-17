@@ -1,6 +1,5 @@
-### 好好学习
-此处分享的是自己写的代码
-也可以是自己看见的好代码
-涉及数据结构以及算法
-切记注释
-### 祝大家天天开心
+###study hard
+
+What I'm sharing here is code that I've written or I've seen good code that involves data structures and algorithms and keep comments in mind
+
+###I wish you all a happy day
