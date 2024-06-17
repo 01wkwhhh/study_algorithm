@@ -1,4 +1,4 @@
-﻿/*笔记代码*/
+﻿/*笔记代码*
 //字符数组指针传递给函数以及不可修改;
 /*#include<stdio.h>
 void print(const char* c)
